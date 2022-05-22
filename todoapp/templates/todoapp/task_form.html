@@ -1,0 +1,24 @@
+{% extends 'todoapp/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit">
+    </form>
+</div>
+
+
+{% endblock content %}
+
+
+ {% comment %} form.as_p just styles the element to be shown as a paragraph. This basically means render
+    the form as paragraph. {% endcomment %}
+
+        {% comment %} The csrf token adds security to the form. It is mandatory to add this. {% endcomment %}

@@ -1,0 +1,1 @@
+web gunicorn todoappProject.wsgi:application --log-file -
